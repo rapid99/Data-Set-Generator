@@ -47,7 +47,7 @@ namespace DataSetGenerator
             }
             ConfirmSettings();
             Console.WriteLine("Generating data set.......");
-            GeneratorFile(title, cols, Convert.ToInt32(rowsCount));
+            GenerateFile(title, cols, Convert.ToInt32(rowsCount));
 
             Console.WriteLine(@$"Data has been saved to C:\temp\{title}.xlsx");
             Console.WriteLine("Start over? (Y)");
@@ -89,7 +89,7 @@ namespace DataSetGenerator
 
         }
 
-        private static void GeneratorFile(string name, List<KeyValuePair<string, string>> cols, int totalRows)
+        private static void GenerateFile(string name, List<KeyValuePair<string, string>> cols, int totalRows)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             var file = new FileInfo(@$"c:\temp\{name}.xlsx");
